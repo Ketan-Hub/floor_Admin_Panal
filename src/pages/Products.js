@@ -237,9 +237,9 @@ const Products = () => {
     //   errors.SubCatName = "Please Select sub category.  ";
     // }
 
-    // if (!values.colour) {
-    //   errors.colour = " Please select colour  ";
-    // }
+    if (!values.color) {
+      errors.color = " Please select colour  ";
+    }
 
     return errors;
   };
