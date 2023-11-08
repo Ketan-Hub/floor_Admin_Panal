@@ -237,9 +237,9 @@ const Products = () => {
     //   errors.SubCatName = "Please Select sub category.  ";
     // }
 
-    if (!values.color) {
-      errors.color = " Please select colour  ";
-    }
+    // if (!values.color) {
+    //   errors.color = " Please select colour  ";
+    // }
 
     return errors;
   };
@@ -857,7 +857,7 @@ const Products = () => {
         </div>
 
         <div class="col-md-6">
-          <label for="formFileMultiple" class="form-label txt-input">Upload Pictures / Files <span className="text-danger">*</span></label>
+          <label for="formFileMultiple" class="form-label txt-input">Upload Pictures / Files <span className="text-danger"></span></label>
           <input class="form-control" name="productPictures" value={data.productPictures} type="file" accept="image/png, image/jpeg, video/*" id="formFileMultiple" multiple onChange={(e) => {
             handleFileChange(e)
             console.log(863, productPictures);
@@ -870,7 +870,7 @@ const Products = () => {
         </div>
 
         <div class="col-md-2">
-          <label for="exampleColorInput" class="form-label txt-input">Colour <span className="text-danger">*</span></label>
+          <label for="exampleColorInput" class="form-label txt-input">Colour <span className="text-danger"></span></label>
           <input type="color" class="form-control form-control-color colorrrs" id="exampleColorInput" value={data.color} onChange={(e) => {
             setData({ ...data, color: e.target.value });
             handleInput(e);
