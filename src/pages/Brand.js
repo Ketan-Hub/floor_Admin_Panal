@@ -12,7 +12,7 @@ const Brand = () => {
   const SaveData = (e) => {
     e.preventDefault()
     console.log(23,data.brand_name);
-    axios.post("http://174.138.112.6/api/brand/create",data )
+    axios.post("https://backfloor.onrender.com/api/brand/create",data )
     .then((res) => {
       const response = res.data.brand
       alert("Form Submited")

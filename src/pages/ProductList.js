@@ -14,7 +14,7 @@ const ProductList = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://174.138.112.6/api/product/getAll")
+        axios.get("https://backfloor.onrender.com/api/product/getAll")
             .then((res) => {
                 console.log(18, res.data.get);
                 setData(res.data.get);
@@ -205,7 +205,7 @@ const ProductList = () => {
     const handleDeleteRow = (id) => {
         console.log(id);
         axios
-            .delete(`http://174.138.112.6/api/product/delete/${id}`)
+            .delete(`https://backfloor.onrender.com/api/product/delete/${id}`)
             .then((response) => console.log('Deleted successfully', id))
             .catch((err) => console.log(err));
 

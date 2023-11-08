@@ -73,7 +73,7 @@ const Products = () => {
     if (Object.keys(err).length == 0) {
       {
         axios
-          .post("http://174.138.112.6/api/product/create", data)
+          .post("https://backfloor.onrender.com/api/product/create", data)
           .then((response) => {
             const products = response.data;
             console.log(77, products.product._id)
@@ -98,7 +98,7 @@ const Products = () => {
     });
     axios
       .put(
-        `http://174.138.112.6/api/product/files/${id}`,
+        `https://backfloor.onrender.com/api/product/files/${id}`,
         formData
       )
       .then((res) => console.log("Files", res.data))
@@ -108,7 +108,7 @@ const Products = () => {
   };
 
   useEffect(() => {
-    axios.get("http://174.138.112.6/api/category/get")
+    axios.get("https://backfloor.onrender.com/api/category/get")
       .then((res) => {
         const response = res.data.categories
         setAllCatData(response)
@@ -117,7 +117,7 @@ const Products = () => {
       })
       .catch((err) => { console.log(err) })
 
-    axios.get("http://174.138.112.6/api/brand/getAll")
+    axios.get("https://backfloor.onrender.com/api/brand/getAll")
       .then((res) => {
         const response = res.data
         console.log(response);
@@ -272,7 +272,7 @@ const Products = () => {
   };
 
   useEffect(() => {
-    axios.get(`http://174.138.112.6/api/product/${id}`)
+    axios.get(`https://backfloor.onrender.com/api/product/${id}`)
       .then((res) => {
         const response = res.data.product
         console.log(278, response)
@@ -320,7 +320,7 @@ const Products = () => {
   }, [id]);
 
   const updateFormData = (e) => {
-    axios.put(`http://174.138.112.6/api/product/update/${id}`, data)
+    axios.put(`https://backfloor.onrender.com/api/product/update/${id}`, data)
       .then((res) => {
         const response = res.data
         console.log(response)

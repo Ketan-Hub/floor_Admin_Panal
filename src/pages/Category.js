@@ -34,7 +34,7 @@ const Category = () => {
     const formData = new FormData();
     formData.append("categoryImage", docs.addressProof);
     axios
-      .put(`http://174.138.112.6/api/addressProof/${id}`, formData)
+      .put(`https://backfloor.onrender.com/api/addressProof/${id}`, formData)
       .then((res) => console.log("addressUploaded", res.data))
       .catch((err) => {
         console.log(err);
@@ -42,7 +42,7 @@ const Category = () => {
   };
 
   useEffect(() => {
-    axios.get("http://174.138.112.6/api/category/get")
+    axios.get("https://backfloor.onrender.com/api/category/get")
       .then((res) => {
         const response = res.data.categories
         setAllCatData(response)
@@ -55,7 +55,7 @@ const Category = () => {
   const SaveCAt = (e) => {
     e.preventDefault()
     console.log(data);
-    axios.post("http://174.138.112.6/api/category/createTemp", data)
+    axios.post("https://backfloor.onrender.com/api/category/createTemp", data)
       .then((res) => {
         const response = res.data.categories
         alert("Submitted");

@@ -9,7 +9,7 @@ const ProductViewPage = () => {
     const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://174.138.112.6/api/product/get/${id}`)
+        axios.get(`https://backfloor.onrender.com/api/product/get/${id}`)
             .then((res) => {
                 const response = res.data
                 console.log(278, response)
