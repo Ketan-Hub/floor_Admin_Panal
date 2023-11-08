@@ -4,7 +4,8 @@ import DataTable from 'react-data-table-component';
 import { MdDelete } from 'react-icons/md'
 import { FaEye } from 'react-icons/fa'
 import { Link, useParams } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const rowsPerPage = 10;
 
 const ProductList = () => {
@@ -206,7 +207,7 @@ const ProductList = () => {
         console.log(id);
         axios
             .delete(`https://backfloor.onrender.com/api/product/delete/${id}`)
-            .then((response) => console.log('Deleted successfully', id))
+            .then((response) => toast.success('Deleted successfully'))
             .catch((err) => console.log(err));
 
     };

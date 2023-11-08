@@ -33,7 +33,7 @@ const Category = () => {
   };
   const uploadimage = (id) => {
     const formData = new FormData();
-    formData.append("categoryImage", docs.addressProof);
+    formData.append("categoryImage", docs.categoryImage);
     axios
       .put(`https://backfloor.onrender.com/api/addressProof/${id}`, formData)
       .then((res) => console.log("addressUploaded", res.data))
@@ -41,6 +41,21 @@ const Category = () => {
         console.log(err);
       });
   };
+  // const uploadProductPic = (id) => {
+  //   const formData = new FormData();
+  //   productPictures.forEach((file, index) => {
+  //     formData.append(`productPictures`, file);
+  //   });
+  //   axios
+  //     .put(
+  //       `https://backfloor.onrender.com/api/product/files/${id}`,
+  //       formData
+  //     )
+  //     .then((res) => console.log("Files", res.data))
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   useEffect(() => {
     axios.get("https://backfloor.onrender.com/api/category/get")
