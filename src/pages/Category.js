@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Category = () => {
   const [selectedItem, setSelectedItem] = useState('');
   const [SuperCat, setSuperCat] = useState(false);
@@ -58,7 +59,7 @@ const Category = () => {
     axios.post("https://backfloor.onrender.com/api/category/createTemp", data)
       .then((res) => {
         const response = res.data.categories
-        alert("Submitted");
+        toast.success("Category Submitted..");
       })
       .catch((err) => { console.log(err) })
   }

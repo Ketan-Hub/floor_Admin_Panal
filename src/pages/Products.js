@@ -78,7 +78,7 @@ const Products = () => {
             const products = response.data;
             console.log(77, products.product._id)
             uploadProductPic(products.product._id)
-            alert("Form Submitted !");
+            toast.success("Form Submitted !");
           })
           .catch((error) => {
             console.error("", error);
@@ -87,7 +87,7 @@ const Products = () => {
     } else {
       setErrors(err)
       console.log(err)
-      alert("Please Fill All Fields")
+      toast.warn("Please Fill All Fields")
     }
   }
 
@@ -503,16 +503,6 @@ const Products = () => {
             <option value="true">True</option>
             <option value="false">False</option>
           </select>
-          {/* {errors.name && data.newProduct === null ? (
-            <p
-              className="text-danger"
-              style={{ fontSize: "14px" }}
-            >
-              {errors.newProduct}
-            </p>
-          ) : (
-            ""
-          )} */}
         </div>
 
         <div class="col-md-4">
@@ -551,16 +541,6 @@ const Products = () => {
             <option value="true">True</option>
             <option value="false">False</option>
           </select>
-          {/* {errors.name && data.isDiscount ===null ? (
-            <p
-              className="text-danger"
-              style={{ fontSize: "14px" }}
-            >
-              {errors.isDiscount}
-            </p>
-          ) : (
-            ""
-          )} */}
         </div>
 
         <div class="col-md-4">
@@ -617,16 +597,6 @@ const Products = () => {
             <option value="true">True</option>
             <option value="false">False</option>
           </select>
-          {/* {errors.name && data.BestSeller ===null ? (
-            <p
-              className="text-danger"
-              style={{ fontSize: "14px" }}
-            >
-              {errors.BestSeller}
-            </p>
-          ) : (
-            ""
-          )} */}
         </div>
 
         <div class="col-md-4">
@@ -810,16 +780,6 @@ const Products = () => {
             <option value="true">True</option>
             <option value="false">False</option>
           </select>
-          {/* {errors.name && data.IsmostViewed === null ? (
-            <p
-              className="text-danger"
-              style={{ fontSize: "14px" }}
-            >
-              {errors.IsmostViewed}
-            </p>
-          ) : (
-            ""
-          )} */}
         </div>
 
         <div class="col-lg-4">
@@ -860,7 +820,6 @@ const Products = () => {
           <label for="formFileMultiple" class="form-label txt-input">Upload Pictures / Files <span className="text-danger"></span></label>
           <input class="form-control" name="productPictures" value={data.productPictures} type="file" accept="image/png, image/jpeg, video/*" id="formFileMultiple" multiple onChange={(e) => {
             handleFileChange(e)
-            console.log(863, productPictures);
             handleImageChange(e);
           }} />
 
